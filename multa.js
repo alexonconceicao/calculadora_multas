@@ -49,7 +49,7 @@ Dados:
 
 Boleto: $${boleto}
 Multa: ${multa}%${jurosDia !== 0 ? `\nJuros por Dia: ${jurosDia}%` : ''}${
-      jurosMes !== 0 ? `\nJuros por Dia: ${jurosMes}%` : ''
+      jurosMes !== 0 ? `\nJuros por Mês: ${jurosMes}%` : ''
     }
 Dias em atraso: ${dias}
 O valor total a pagar é: $${valorFinal.toFixed(2)}`
@@ -64,3 +64,15 @@ function calcularMulta() {
 }
 
 showDados();
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question('Pressione qualquer tecla para encerrar...\n', () => {
+  rl.close();
+  process.exit(0);
+});
